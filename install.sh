@@ -7,6 +7,17 @@
 ###########################################################################
 #install clang7
 ###########################################################################
+sudo apt install wget curl openssl
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg key | sudo apt-key add -
+
+sudo sh -c "echo deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch main >> /etc/apt/sources.list"
+sudo sh -c "echo deb-src http://apt.llvm.org/stretch/ llvm-toolchain-stretch main >> /etc/apt/sources.list"
+# 6.0 
+sudo sh -c "echo deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main >> /etc/apt/sources.list"
+sudo sh -c "echo deb-src http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main >> /etc/apt/sources.list"
+# 7 
+sudo sh -c "echo deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-7 main >> /etc/apt/sources.list"
+sudo sh -c "echo deb-src http://apt.llvm.org/stretch/ llvm-toolchain-stretch-7 main >> /etc/apt/sources.list"
 # LLVM
 sudo apt -y install libllvm-7-ocaml-dev libllvm7 llvm-7 llvm-7-dev llvm-7-doc llvm-7-examples llvm-7-runtime
 # Clang and co
@@ -78,6 +89,7 @@ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
 source ~/.bash_profile
 pyenv install -v 3.7.1
+pyenv global 3.7.1
 
 ###########################################################################
 #install util tools
@@ -127,4 +139,4 @@ sudo apt-get --yes install \
   libnss3\
   lsb-release\
   xdg-utils\
-	wget
+  wget
