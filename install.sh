@@ -7,7 +7,7 @@
 ###########################################################################
 #install clang7
 ###########################################################################
-sudo apt install wget curl openssl
+sudo apt -y install wget curl openssl
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg key | sudo apt-key add -
 
 sudo sh -c "echo deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch main >> /etc/apt/sources.list"
