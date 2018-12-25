@@ -5,9 +5,16 @@
 ###########################################################################
 
 ###########################################################################
+#install util tools
+###########################################################################
+sudo apt -y install vim nmap mysql-server redis-server g++ build-essential　wget curl openssl
+
+git config --global core.editor vim
+
+###########################################################################
 #install clang7
 ###########################################################################
-sudo apt -y install wget curl openssl
+
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg key | sudo apt-key add -
 
 sudo sh -c "echo deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch main >> /etc/apt/sources.list"
@@ -90,13 +97,6 @@ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nf
 source ~/.bash_profile
 pyenv install -v 3.7.1
 pyenv global 3.7.1
-
-###########################################################################
-#install util tools
-###########################################################################
-sudo apt -y install vim nmap mysql-server redis-server g++ build-essential
-
-git config --global core.editor vim
 
 ###########################################################################
 # install dependency libraries of chromium to run puppeteer
